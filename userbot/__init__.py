@@ -167,7 +167,10 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
     "TMP_DOWNLOAD_DIRECTORY") or "./downloads"
 
 # Terminal Alias
-TERM_ALIAS = os.environ.get("TERM_ALIAS") or "XBot-Remix"
+TERM_ALIAS = os.environ.get("TERM_ALIAS") or "XBOT-REMIX"
+
+#Bot version
+BOT_VER = os.environ.get("BOT_VER", "3.1")
 
 # Genius Lyrics API
 GENIUS = os.environ.get("GENIUS_ACCESS_TOKEN") or None
