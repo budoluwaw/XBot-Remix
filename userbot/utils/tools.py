@@ -1,11 +1,24 @@
+# Copyright (C) 2020 Adek Maulana
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 
 import re
 import hashlib
-import os
-import os.path
-from userbot import bot, TEMP_DOWNLOAD_DIRECTORY
-from telethon.tl.functions.channels import GetParticipantRequest
-from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
+
+from telethon.tl.types import DocumentAttributeFilename
 
 
 async def md5(fname: str) -> str:
@@ -54,37 +67,6 @@ def human_to_bytes(size: str) -> int:
         size = re.sub(r'([KMGT])', r' \1', size)
     number, unit = [string.strip() for string in size.split()]
     return int(float(number) * units[unit])
-
-
-async def is_admin(chat_id, user_id):
-    req_jo = await bot(GetParticipantRequest(
-        channel=chat_id,
-        user_id=user_id
-    ))
-    chat_participant = req_jo.participant
-    if isinstance(
-            chat_participant,
-            ChannelParticipantCreator) or isinstance(
-            chat_participant,
-            ChannelParticipantAdmin):
-        return True
-    return False
-
-
-async def take_screen_shot(video_file: str, duration: int, path: str) -> str:
-    _LOG.info(
-        '[[[Extracting a frame from %s ||| Video duration => %s]]]',
-        video_file,
-        duration)
-    ttl = duration // 2
-    thumb_image_path = path or os.path.join(
-        TEMP_DOWNLOAD_DIRECTORY,
-        f"{basename(video_file)}.jpg")
-    command = f"ffmpeg -ss {ttl} -i '{video_file}' -vframes 1 '{thumb_image_path}'"
-    err = (await runcmd(command))[1]
-    if err:
-        _LOG.error(err)
-    return thumb_image_path if os.path.exists(thumb_image_path) else None
 
 
 async def check_media(reply_message):
