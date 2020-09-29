@@ -48,7 +48,7 @@ botclone() {
     cd ~
     echo "Cloning bot sources..."
     if [ -z "$bot_clone" ]; then
-        git clone https://github.com/X-Newbie/XBot-Remix -b x-sql-extended
+        git clone https://github.com/X-Newbie/XBot-Remix -b alpha
         save_prog "bot_clone"
     fi
     echo "DONE!!"
