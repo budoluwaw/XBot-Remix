@@ -78,16 +78,6 @@
       "value": "1",
       "required": true
     },
-    "CHROME_DRIVER": {
-      "description": "ChromeDriver location for selenium based modules.",
-      "value": "/usr/bin/chromedriver",
-      "required": true
-    },
-    "GOOGLE_CHROME_BIN": {
-      "description": "Google Chrome (or) Chromium binary location for selenium based modules.",
-      "value": "/usr/bin/chromium-browser",
-      "required": true
-    },
     "OPEN_WEATHER_MAP_APPID": {
       "description": "Get your own APPID (API key)from https://api.openweathermap.org/data/2.5/weather",
       "required": false
@@ -224,21 +214,5 @@
         "version": "12"
       }
     }
-  ],"buildpacks": [{
-    "url": "https://github.com/heroku/heroku-buildpack-python.git"
-  }, {
-    "url": "https://github.com/heroku/heroku-buildpack-redis"
-  }, {
-    "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
-  }, {
-    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
-  },{
-    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
-  }, {
-    "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
-  }, {
-    "url": "https://github.com/amivin/aria2-heroku"
-  }, {
-    "url": "https://github.com/stevo550/buildpack-slug-cleaner"
-  }]
+  ]
 }
