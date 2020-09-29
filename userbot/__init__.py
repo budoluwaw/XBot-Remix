@@ -112,8 +112,8 @@ OCR_SPACE_API_KEY=os.environ.get("OCR_SPACE_API_KEY", None)
 REM_BG_API_KEY=os.environ.get("REM_BG_API_KEY", None)
 
 # Chrome Driver and Headless Google Chrome Binaries
-CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
-GOOGLE_CHROME_BIN = os.environ.get(
+CHROME_DRIVER=os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
+GOOGLE_CHROME_BIN=os.environ.get(
     "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
