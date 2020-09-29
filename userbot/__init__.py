@@ -426,3 +426,6 @@ COUNT_PM = {}
 LASTMSG = {}
 ISAFK = False
 AFKREASON = None
+ZALG_LIST = {}
+CMD_HELP = {}
+ENABLE_KILLME = True
