@@ -4,8 +4,8 @@ FROM alfianandaa/alf:groovy
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b master https://github.com/X-Newbie/XBot-Remix /home/projectalf/
-RUN mkdir /home/projectalf/bin/
-WORKDIR /home/projectalf/
+RUN git clone -b master https://github.com/X-Newbie/XBot-Remix /root/userbot
+RUN mkdir /root/userbot/.bin
+WORKDIR /root/userbot
 
 CMD ["python3","-m","userbot"]
