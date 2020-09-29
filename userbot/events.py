@@ -144,26 +144,7 @@ def register(**args):
                     file.write(ftext)
                     file.close()
 
-                    if LOGSPAMMER:
-                        await check.edit(
-                            "`Sorry, my userbot has crashed.\nThe error logs are stored in the userbot's log chat.`"
-                        )
-
-                        log = codecs.open("error.log", "r", encoding="utf-8")
-                        data = log.read()
-                        key = (
-                            requests.post(
-                                "https://nekobin.com/api/documents",
-                                json={"content": data},
-                            )
-                            .json()
-                            .get("result")
-                            .get("key")
-                        )
-                        url = f"https://nekobin.com/raw/{key}"
-                        anu = f"{text}\n`Here the error:`\nPasted to: [Nekobin]({url})"
-                        await check.client.send_message(send_to, anu)
-                        remove("error.log")
+                    
             else:
                 pass
 
