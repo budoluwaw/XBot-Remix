@@ -97,7 +97,7 @@ UPSTREAM_REPO_URL=os.environ.get(
     "UPSTREAM_REPO_URL",
     "https://github.com/X-Newbie/XBot-Remix.git")
 UPSTREAM_REPO_BRANCH=os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "x-sql-extended")
+    "UPSTREAM_REPO_BRANCH", "alpha")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE=sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -112,8 +112,8 @@ OCR_SPACE_API_KEY=os.environ.get("OCR_SPACE_API_KEY", None)
 REM_BG_API_KEY=os.environ.get("REM_BG_API_KEY", None)
 
 # Chrome Driver and Headless Google Chrome Binaries
-CHROME_DRIVER=os.environ.get("CHROME_DRIVER", None)
-GOOGLE_CHROME_BIN=os.environ.get(
+CHROME_DRIVER = os.environ.get("CHROME_DRIVER") or "/usr/bin/chromedriver"
+GOOGLE_CHROME_BIN = os.environ.get(
     "GOOGLE_CHROME_BIN") or "/usr/bin/google-chrome"
 
 # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
