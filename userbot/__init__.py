@@ -169,7 +169,7 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get(
 # Terminal Alias
 TERM_ALIAS = os.environ.get("TERM_ALIAS") or "XBOT-REMIX"
 
-#Bot version
+# Bot version
 BOT_VER = os.environ.get("BOT_VER", "3.1")
 
 # Genius Lyrics API
