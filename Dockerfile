@@ -4,11 +4,8 @@ FROM alfianandaa/alf:groovy
 #
 # Clone repo and prepare working directory
 #
-RUN git clone -b x-sql-extended https://github.com/X-Newbie/XBot-Remix /root/userbot
-RUN mkdir /root/userbot/.bin
-WORKDIR /root/userbot
-
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/X-Newbie/XBot-Remix/x-sql-extended/requirements.txt
+RUN git clone -b master https://github.com/X-Newbie/XBot-Remix /home/projectalf/
+RUN mkdir /home/projectalf/bin/
+WORKDIR /home/projectalf/
 
 CMD ["python3","-m","userbot"]
